@@ -19,4 +19,4 @@ for rec in recs:
    print(rec.description)
    print(seq)
    print(seq[0:20])
-#   print(seq.alphabet)
+   print(seq.alphabet)
