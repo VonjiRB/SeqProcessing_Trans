@@ -1,7 +1,9 @@
 from Bio import Entrez, SeqIO
-#from Bio.Seq import Seq
-#from Bio.Alphabet import IUPAC
-#seq = Seq.Seq(str(seq), IUPAC.unambiguous_dna)
+import Bio   # Here: 44/306
+from Bio.Seq import Seq
+from Bio.SeqUtils import IUPACData
+from Bio.Data import IUPACData
+seq = Seq(str(IUPACData))
 
 Entrez.email = "vonjirabe40@gmail.com"
 
@@ -17,6 +19,17 @@ recs = SeqIO.parse('example.fasta', 'fasta')
 for rec in recs:
    seq = rec.seq
    print(rec.description)
-   print(seq)
+   #print(seq)
    print(seq[0:20])
-   print(seq.alphabet)
+   #print(seq.alphabet)
+
+rna = Seq(str(IUPACData))
+rna = seq.transcribe()
+print(rna)
+
+prot = seq.translate()
+print(prot)
+
+
+
+
